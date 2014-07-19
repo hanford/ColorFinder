@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/color.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+
+  </head>
+  <body ng-app="ColorFinder" ng-controller="ColorController">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Color Finder</h1>
+      </ion-header-bar>
+      <ion-content>
+      <label class="item item-input">
+      	<span class="input-label">Hexidecimal Color</span>
+      	<input type="text" ng-model="colorCode" maxlength="7" placeholder="6 digit Hexidecmal">
+      </label>
+      <div class="button-bar">
+	      <button class="button button-light" ng-click="lightenColor()">
+	      	<i class="ion-ios7-sunny-outline"></i>
+	      </button>
+	      <button class="button button-light" ng-click="darkenColor()">
+	      	<i class="ion-ios7-sunny"></i>
+	      </button>
+      </div>
+      <div class="card">
+      	<div class="item item-text-wrap" style="background-color:{{colorCode}};">
+      	</div>
+      </div>
+      <div class="box"></div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
