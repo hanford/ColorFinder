@@ -20,7 +20,7 @@ angular.module('controller', [])
 	}
 
 	$scope.lighten = function (color) {
-		var toHex = color.lighten(0.4).hexString();
+		var toHex = color.lighten(0.25).hexString();
 		$scope.toggleClear = false;
 		if (toHex != "#FFFFFF"){
 			var newCol = {'color': toHex, 'rgb': color.values.rgb};
@@ -29,7 +29,7 @@ angular.module('controller', [])
 	}
 
 	$scope.darken = function (color) {
-		var toHex = color.darken(0.4).hexString();
+		var toHex = color.darken(0.25).hexString();
 		$scope.toggleClear = false;
 		if (toHex != "#000000"){
 			var newCol = {'color': toHex, 'rgb': color.values.rgb};

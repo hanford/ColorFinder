@@ -27,7 +27,7 @@
   <body ng-app="ColorFinder" ng-controller="ColorController" id="#top">
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Color Finder</h1>
+        <h1 class="title">Color Generator</h1>
       </ion-header-bar>
       <ion-content>
 	      <label class="item item-input">
@@ -47,7 +47,9 @@
       	</div>
       <div ng-repeat="items in colorArray">
       	<div class="item item-text-wrap" style="background-color:{{items.color}};">
-      		<span class="opaque-text">{{items.color}}  --  rgb{{items.rgb}}</span>
+      		<span class="opaque-text">
+      			{{items.color}}<span class="pull-right">rgb{{items.rgb}}</span>
+      		</span>
       	</div>
       </div>
       <a href="#top">
