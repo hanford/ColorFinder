@@ -45,13 +45,15 @@
 	      <div class="item item-text-wrap" style="background-color:{{colorCode}};">
       		<span class="opaque-text">Orginal: {{colorCode}}</span>
       	</div>
-      <div ng-repeat="items in colorArray">
+      	<ion-list>
+      <ion-item ng-repeat="items in colorArray" style="padding:0;">
       	<div class="item item-text-wrap" style="background-color:{{items.color}};">
       		<span class="opaque-text">
       			{{items.color}}<span class="pull-right">rgb{{items.rgb}}</span>
       		</span>
       	</div>
-      </div>
+      </ion-item>
+    </ion-list>
       <a href="#top">
       	<button class="button button-full button-light" ng-hide="toggleClear" ng-click="clearPalette()">Clear Palette</button>
       </a>
