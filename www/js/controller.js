@@ -7,20 +7,20 @@ angular.module('controller', [])
 
 	$scope.lightenColor = function(colorCode) {
 		var color = Color(colorCode);
-		for (var i = 0; i < 15; i++) {
+		for (var i = 0; i < 5; i++) {
 			$scope.lighten(color);
 		}
 	}
 
 	$scope.darkenColor = function(colorCode) {
 		var color = Color(colorCode);
-		for (var i = 0; i < 10; i++) {
+		for (var i = 0; i < 5; i++) {
 			$scope.darken(color);
 		}
 	}
 
 	$scope.lighten = function (color) {
-		var toHex = color.lighten(0.2).hexString();
+		var toHex = color.lighten(0.25).hexString();
 		$scope.toggleClear = false;
 		if (toHex != "#FFFFFF"){
 			var newCol = {'color': toHex, 'rgb': color.values.rgb};
@@ -29,7 +29,7 @@ angular.module('controller', [])
 	}
 
 	$scope.darken = function (color) {
-		var toHex = color.darken(0.2).hexString();
+		var toHex = color.darken(0.25).hexString();
 		$scope.toggleClear = false;
 		if (toHex != "#000000"){
 			var newCol = {'color': toHex, 'rgb': color.values.rgb};
@@ -40,6 +40,6 @@ angular.module('controller', [])
 	$scope.clearPalette = function() {
 		$scope.colorArray = [];
 		$scope.toggleClear = true;
-		console.log(colorArray)
+		console.log($scope.colorArray)
 	}
 })

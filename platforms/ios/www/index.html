@@ -24,8 +24,7 @@
     <script src="js/controller.js"></script>
 
   </head>
-  <body ng-app="ColorFinder" ng-controller="ColorController">
-	<form name="colorGrab">
+  <body ng-app="ColorFinder" ng-controller="ColorController" id="#top">
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Color Finder</h1>
@@ -43,7 +42,6 @@
 	      	Darken <i class="ion-ios7-sunny"></i>
 	      </button>
       </div>
-	    </form>
 	      <div class="item item-text-wrap" style="background-color:{{colorCode}};">
       		<span class="opaque-text">Orginal: {{colorCode}}</span>
       	</div>
@@ -52,7 +50,9 @@
       		<span class="opaque-text">{{items.color}}  --  rgb{{items.rgb}}</span>
       	</div>
       </div>
-      <button class="button button-full button-light" ng-hide="toggleClear" ng-click="clearPalette()">Clear Palette </button>
+      <a href="#top">
+      	<button class="button button-full button-light" ng-hide="toggleClear" ng-click="clearPalette()">Clear Palette</button>
+      </a>
       </ion-content>
       <!-- <ion-footer-bar> -->
     	<!-- </ion-footer-bar> -->
