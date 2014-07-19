@@ -33,22 +33,24 @@
       <ion-content>
       <label class="item item-input">
       	<span class="input-label">Hexidecimal Color</span>
-      	<input type="text" ng-model="colorCode" maxlength="7" placeholder="6 digit Hexidecmal">
+      	<input type="text" value="{{colorCode}}" maxlength="7" placeholder="6 digit Hexidecmal">
       </label>
-      <div class="button-bar">
-	      <button class="button button-light" ng-click="lightenColor()">
-	      	<i class="ion-ios7-sunny-outline"></i>
-	      </button>
-	      <button class="button button-light" ng-click="darkenColor()">
-	      	<i class="ion-ios7-sunny"></i>
-	      </button>
-      </div>
       <div class="card">
       	<div class="item item-text-wrap" style="background-color:{{colorCode}};">
+      		<span class="opaque-text">{{colorCode}}</span>
       	</div>
       </div>
-      <div class="box"></div>
       </ion-content>
+            <ion-footer-bar>
+      <div class="button-bar">
+	      <button class="button button-light" ng-click="lightenColor()">
+	      	Lighten <i class="ion-ios7-sunny-outline"></i>
+	      </button>
+	      <button class="button button-light" ng-click="darkenColor()">
+	      	Darken <i class="ion-ios7-sunny"></i>
+	      </button>
+      </div>
+    </ion-footer-bar>
     </ion-pane>
   </body>
 </html>

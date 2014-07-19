@@ -31,26 +31,31 @@
         <h1 class="title">Color Finder</h1>
       </ion-header-bar>
       <ion-content>
-      <label class="item item-input">
-      	<span class="input-label">Hexidecimal Color</span>
-      	<input type="text" value="{{colorCode}}" maxlength="7" placeholder="6 digit Hexidecmal">
-      </label>
-      <div class="card">
-      	<div class="item item-text-wrap" style="background-color:{{colorCode}};">
-      		<span class="opaque-text">{{colorCode}}</span>
-      	</div>
-      </div>
-      </ion-content>
-            <ion-footer-bar>
-      <div class="button-bar">
-	      <button class="button button-light" ng-click="lightenColor()">
+      <form name="colorGrab">
+	      <label class="item item-input">
+	      	<span class="input-label">Hexidecimal Color</span>
+	      	<input type="text" ng-model="colorCode" maxlength="7" placeholder="6 digit Hexidecmal">
+	      </label>
+       <div class="button-bar">
+	      <button class="button button-light" ng-click="lightenColor(colorCode)">
 	      	Lighten <i class="ion-ios7-sunny-outline"></i>
 	      </button>
-	      <button class="button button-light" ng-click="darkenColor()">
+	      <button class="button button-light" ng-click="darkenColor(colorCode)">
 	      	Darken <i class="ion-ios7-sunny"></i>
 	      </button>
       </div>
-    </ion-footer-bar>
+	    </form>
+	      <div class="item item-text-wrap" style="background-color:{{colorCode}};">
+      		<span class="opaque-text">Orginal: {{colorCode}}</span>
+      	</div>
+      <div ng-repeat="items in colorArray">
+      	<div class="item item-text-wrap" style="background-color:{{items.color}};">
+      		<span class="opaque-text">{{items.color}}</span>
+      	</div>
+      </div>
+      </ion-content>
+      <!-- <ion-footer-bar> -->
+    	<!-- </ion-footer-bar> -->
     </ion-pane>
   </body>
 </html>

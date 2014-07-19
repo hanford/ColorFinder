@@ -1,40 +1,43 @@
 angular.module('controller', [])
 
 .controller('ColorController', function($scope) {
-	$scope.colorCode = '#FF1231';
+	$scope.colorCode = '#'
+	$scope.colorObj = {};
+	$scope.colorArray = [];
 
-	$scope.lightenColor = function() {
-		// for (var i = 0; i < 5; i++) {
-		$scope.lighten();
-		// }
+	$scope.lightenColor = function(colorCode) {
+		var color = Color(colorCode);
+		for (var i = 0; i < 5; i++) {
+			$scope.lighten(color);
+		}
 	}
 
-	$scope.darkenColor = function() {
-		// for (var i = 0; i < 5; i++) {
-		$scope.darken();
-		// }
+	$scope.darkenColor = function(colorCode) {
+		var color = Color(colorCode);
+		for (var i = 0; i < 5; i++) {
+			$scope.darken(color);
+		}
 	}
 
-	$scope.lighten = function () {
-		var c = $scope.colorCode;
-		var color = Color(c);
+	$scope.lighten = function (color) {
 		var toHex = color.lighten(0.2).hexString();
-	  console.log(toHex)
-	  $scope.colorCode = toHex;
-	  // if (lighter.hexString() != "#FFFFFF"){
+		if (toHex != "#FFFFFF"){
+		$scope.colorCode = toHex;
+		var newCol = {'color': toHex};
+		$scope.colorArray.push(newCol)
+		}
 	    // $('<div class="bg">' + lighter.hexString() + '</div>')
 	    // .css("background-color", lighter.hexString())
 	    // .appendTo('.box');
 	  // }
 	}
 
-	$scope.darken = function () {
-		var c = $scope.colorCode;
-		var color = Color(c);
+	$scope.darken = function (color) {
 		var toHex = color.darken(0.2).hexString();
-	  console.log(toHex)
-	  $scope.colorCode = toHex;
-	  // if (darker.hexString() != "#000000"){
+		if (toHex != "#000000"){
+		var newCol = {'color': toHex};
+		$scope.colorArray.push(newCol)
+		}
 	    // $('<div class="bg">' + darker.hexString() + '</div>')
 	    // .css("background-color", darker.hexString())
 	    // .appendTo('.box');

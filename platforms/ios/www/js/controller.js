@@ -5,13 +5,13 @@ angular.module('controller', [])
 
 	$scope.lightenColor = function() {
 		// for (var i = 0; i < 5; i++) {
-			$scope.lighten();
+		$scope.lighten();
 		// }
 	}
 
 	$scope.darkenColor = function() {
 		// for (var i = 0; i < 5; i++) {
-			$scope.darken();
+		$scope.darken();
 		// }
 	}
 
